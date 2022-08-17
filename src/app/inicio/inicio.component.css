@@ -1,0 +1,119 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+body
+{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1d061a;
+    /* background: black; */
+}
+#foto
+{
+    width: 25px;
+    border-radius: 10px;
+}
+nav
+{
+    /* border: 1px solid black; */
+    margin:10px;
+}
+div
+{
+    /* border: 1px solid black; */
+}
+.btn 
+{
+    /* border: 1px solid black; */
+}
+img
+{
+    width: 50px;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0 ;
+}
+.container .box
+{
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+.container .box::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+.container .box::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 00.5s;
+}
+
+.container .box:hover:before,
+.container .box:hover:after
+{
+    transform: skew(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+}
+
+.container .box:nth-child(1):before,
+.container .box:nth-child(1):after
+{
+ background: linear-gradient(315deg,#ffbc00, #ff0058);
+}
+
+.container .box:nth-child(2):before,
+.container .box:nth-child(2):after
+{
+ background: linear-gradient(315deg,#ffbc00, #ff0058);
+}
+
+.container .box:nth-child(3):before,
+.container .box:nth-child(3):after
+{
+ background: linear-gradient(315deg,#ffbc00, #ff0058);
+}
+
+.content
+{
+    z-index: 1;
+    /* display: none; */
+}
