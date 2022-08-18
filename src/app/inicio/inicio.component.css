@@ -114,14 +114,91 @@ img
  background: linear-gradient(315deg,#4dff03, #00d0ff);
 }
 
+
+.container .box:nth-child(4):before,
+.container .box:nth-child(4):after
+{
+ background: linear-gradient(315deg,#4dff03, #00d0ff);
+}
 .container .box span
 {
     display: block;
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+.container .box span::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out linear infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05  );
+}
+.container .box:hover span::before
+{
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
 }
 
-.content
+.container .box span::after
 {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out linear infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05  );
+    animation-delay: -1s;
+}
+.container .box:hover span::after
+{
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+@keyframes animate
+{
+    0%,100%
+    {
+        transform: translateY(10px);
+    }
+    50%
+    {
+        transform: translateY(-10px);
+    }
+}
+
+.container .box .content
+{
+    position: relative ;
+    left: 0;
+    padding: 20px 40px;
+    background: #fff;
     z-index: 1;
-    /* display: none; */
 }
